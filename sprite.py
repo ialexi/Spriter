@@ -14,7 +14,7 @@
 # Sets are folders, containing two or more files;
 # At a minimum, they will have a png and a CSS file. Sometimes, however, images are NOT
 # sprited (based on size; this can be customized in the set's config file). These images
-# will be included separately. The field is max-size, and defaults to 64.
+# will be included separately. The field is max-size, and defaults to 128.
 
 # You run like: python process-images.py (sets folder) (target folder) (optional:url pattern- default: sc_url('images/{0}'))
 #	in other words, from this folder: 

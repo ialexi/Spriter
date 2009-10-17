@@ -30,7 +30,7 @@ def process_set(set_name, set_path, output_set_path, url_form):
 	# Need to know if there is a config file
 	# First, prepare default config.
 	config = {
-		"max-size": 64,
+		"max-size": 128,
 		"repeat": "none",
 		"repeat-width": 32,
 		"repeat-height": 32
@@ -174,7 +174,7 @@ def process_set(set_name, set_path, output_set_path, url_form):
 	
 	# allocate image and prepare a CSS string
 	css = ""
-	gen = Image.new("RGBA", (sprite_width, sprite_height), (0, 0, 0, 255))
+	gen = Image.new("RGBA", (sprite_width, sprite_height), (0, 0, 0, 0))
 	
 	# Start generating
 	for sprite in sprites:

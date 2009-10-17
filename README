@@ -41,7 +41,7 @@ What it does:
 	--	Takes an output folder, under which it will create new set folders 
 		containing CSS and image files.
 
-	--	Combines images under a maximum size (64x64 by default—see 
+	--	Combines images under a maximum size (128x128 by default—see 
 		Configuration) into a sprites.png file in the output set folder.
 		
 	--	Creates CSS referencing these images using a URL template (SproutCore 
@@ -99,7 +99,7 @@ There are a few things that are configurable. Configuration is done per-set.
 Configuration files are JSON files, and are very simple. They are optional, and 
 take at most four parameters:
 
-	--	max-size: default: 64. 
+	--	max-size: default: 128. 
 		The maximum size for sprited images. Images above this size will be put 
 		as separate images. Useful if you have some really high-res icons you 
 		don’t want to sprite, but want to keep with the set.
