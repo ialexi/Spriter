@@ -1,7 +1,7 @@
-.icon-dropbox-64 { background:static_url('images/common/sprites.png') no-repeat; width:64px; height:64px; background-position:-0px -0px; }
-.icon-file-64 { background:static_url('images/common/sprites.png') no-repeat; width:64px; height:64px; background-position:-0px -64px; }
-.icon-advanced-32 { background:static_url('images/common/sprites.png') no-repeat; width:32px; height:32px; background-position:-0px -128px; }
-.icon-dropbox-32 { background:static_url('images/common/sprites.png') no-repeat; width:32px; height:32px; background-position:-32px -128px; }
-.icon-file-32 { background:static_url('images/common/sprites.png') no-repeat; width:32px; height:32px; background-position:-0px -160px; }
-.icon-dropbox-512 { background:static_url('images/common/dropbox-512.png'); width:512px; height:512px; }
-.icon-file-512 { background:static_url('images/common/file-512.png'); width:512px; height:512px; }
+.common.dropbox-64.icon { background:static_url('images/common/sprites.png') no-repeat; width:64px; height:64px; background-position:-0px -0px; }
+.common.file-64.icon { background:static_url('images/common/sprites.png') no-repeat; width:64px; height:64px; background-position:-64px -0px; }
+.common.advanced-32.icon { background:static_url('images/common/sprites.png') no-repeat; width:32px; height:32px; background-position:-0px -64px; }
+.common.dropbox-32.icon { background:static_url('images/common/sprites.png') no-repeat; width:32px; height:32px; background-position:-32px -64px; }
+.common.file-32.icon { background:static_url('images/common/sprites.png') no-repeat; width:32px; height:32px; background-position:-64px -64px; }
+.common.dropbox-512.icon { background:static_url('images/common/dropbox-512.png'); width:512px; height:512px; }
+.common.file-512.icon { background:static_url('images/common/file-512.png'); width:512px; height:512px; }

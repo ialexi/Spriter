@@ -118,6 +118,6 @@ take at most four parameters:
 	--	repeat-height: See that lovely summary of repeat-width above? Well, 
 		this is the same, but for y/height.
 
-Where do the config files go? In the set folder, named config.js.
+Where do the config files go? In the set folder, named config.json.
 
 Nice and simple, eh?

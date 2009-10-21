@@ -14,8 +14,7 @@ try:
 except ImportError:
 	import json
 
-# process_set: 	processes a set folder. set_name supplied ONLY so that it can write
-#				out errors intelligently.
+# process_set: 	processes a set folder. set_name supplied for errors and CSS
 def process_set(set_name, set_path, output_set_path, url_form):
 	# Check that the input set exists.
 	if not os.path.exists(set_path):
@@ -37,7 +36,7 @@ def process_set(set_name, set_path, output_set_path, url_form):
 	}
 	
 	# Now, load actual config if necessary, mixing in to default
-	config_path = os.path.join(set_path, "config.js")
+	config_path = os.path.join(set_path, "config.json")
 	if os.path.exists(config_path):
 		try:
 			config_file = open(config_path)
@@ -182,8 +181,9 @@ def process_set(set_name, set_path, output_set_path, url_form):
 		gen.paste(img, (sprite["x"], sprite["y"]))
 		
 		# Create some CSS
-		css += ".{className} {{ background:{url} {repeat}; width:{width!s}px; height:{height!s}px; background-position:-{x!s}px -{y!s}px; }}\n".format(
-			className="icon-" + sprite["name"], 
+		css += ".{setName} .{className}.icon, .{setName}.{className}.icon {{ background:{url} {repeat}; background-position:-{x!s}px -{y!s}px; }}\n".format(
+			setName=set_name,
+			className=sprite["name"], 
 			width=sprite['width'],
 			height=sprite['height'],
 			x=sprite['x'], 
@@ -198,8 +198,9 @@ def process_set(set_name, set_path, output_set_path, url_form):
 	
 	# now, prepare non-sprite CSS
 	for image in plain:
-		css += ".{className} {{ background:{url}; width:{width!s}px; height:{height!s}px; }}\n".format(
-			className="icon-" + image["name"],
+		css += ".{setName} .{className}.icon, .{setName}.{className}.icon {{ background:{url}; }}\n".format(
+			setName=set_name,
+			className=image["name"],
 			width=image["width"],
 			height=image["height"],
 			url=image["url"]
