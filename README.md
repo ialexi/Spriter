@@ -30,22 +30,23 @@ So, not much danger... but there is a danger.
 Requirements
 ===============================================================================
 The script is written in Python. It requires:
-	--	Either: Python 2.6+ or Python 2.5 with simplejson installed
-	--	PIL (Python Imaging Library)
+
+- Either: Python 2.6+ or Python 2.5 with simplejson installed
+- PIL (Python Imaging Library)
 
 What it does:
 ===============================================================================
-	-- 	Takes a “sets” folder, which should have sub-folder “sets” of icons to 
-		be sprited.
+- Takes a “sets” folder, which should have sub-folder “sets” of icons to 
+  be sprited.
 
-	--	Takes an output folder, under which it will create new set folders 
-		containing CSS and image files.
+- Takes an output folder, under which it will create new set folders 
+  containing CSS and image files.
 
-	--	Combines images under a maximum size (128x128 by default—see 
-		Configuration) into a sprites.png file in the output set folder.
+- Combines images under a maximum size (128x128 by default—see 
+  Configuration) into a sprites.png file in the output set folder.
 		
-	--	Creates CSS referencing these images using a URL template (SproutCore 
-		oriented by default—see URLs)
+- Creates CSS referencing these images using a URL template (SproutCore 
+  oriented by default—see URLs)
 
 Sets
 ===============================================================================
