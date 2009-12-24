@@ -20,9 +20,9 @@ Mild Warning
 ===============================================================================
 Spriter WILL overwrite files it sees. You only have to worry about this if you
 have:
-	&lt;target folder>/(a set name)/images.css
-	&lt;target folder>/(a set name)/sprites.png
-	&lt;target folder/(a set name)/(name of an unspritable image)
+	<target folder>/(a set name)/images.css
+	<target folder>/(a set name)/sprites.png
+	<target folder>/(a set name)/(name of an unspritable image)
 
 So, not much danger... but there is a danger.
 
