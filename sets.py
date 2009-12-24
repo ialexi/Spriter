@@ -29,6 +29,7 @@ def process_set(set_name, set_path, output_set_path, url_form):
 	# Need to know if there is a config file
 	# First, prepare default config.
 	config = {
+		"prepend-set-name": True,
 		"max-size": 128,
 		"repeat": "none",
 		"repeat-width": 32,
@@ -173,6 +174,9 @@ def process_set(set_name, set_path, output_set_path, url_form):
 	
 	# allocate image and prepare a CSS string
 	css = ""
+	cssString = ".{className} {{ background:{url} {repeat}; background-position:-{x!s}px -{y!s}px; }}\n"
+	if config["prepend-set-name"]:
+		cssString = ".{setName} .{className}, .{setName}.{className} {{ background:{url} {repeat}; background-position:-{x!s}px -{y!s}px; }}\n"
 	gen = Image.new("RGBA", (sprite_width, sprite_height), (0, 0, 0, 0))
 	
 	# Start generating
@@ -181,7 +185,7 @@ def process_set(set_name, set_path, output_set_path, url_form):
 		gen.paste(img, (sprite["x"], sprite["y"]))
 		
 		# Create some CSS
-		css += ".{setName} .{className}.icon, .{setName}.{className}.icon {{ background:{url} {repeat}; background-position:-{x!s}px -{y!s}px; }}\n".format(
+		css += cssString.format(
 			setName=set_name,
 			className=sprite["name"], 
 			width=sprite['width'],
@@ -195,10 +199,14 @@ def process_set(set_name, set_path, output_set_path, url_form):
 	# Save image... if there is anything to save
 	if len(sprites) > 0:
 		gen.save(os.path.join(output_set_path, "sprites.png"), "PNG")
-	
+		
+		cssString = ".{className} {{ background:{url}; }}\n"
+		if config["prepend-set-name"]:
+			cssString = ".{setName} .{className}, .{setName}.{className} {{ background:{url}; }}\n"
+		
 	# now, prepare non-sprite CSS
 	for image in plain:
-		css += ".{setName} .{className}.icon, .{setName}.{className}.icon {{ background:{url}; }}\n".format(
+		css += cssString.format(
 			setName=set_name,
 			className=image["name"],
 			width=image["width"],
